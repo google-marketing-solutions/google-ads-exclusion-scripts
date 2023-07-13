@@ -107,7 +107,7 @@ function readTopicsFromSheet() {
  * Extracts customerIds from the account ids sheet.
  *
  * @param {string} data the input.
- * @return Object{{Array.<number>}, number} A list of customer IDs and configured limit.
+ * @return {Object<Array.<number>, number>} A list of customer IDs and configured limit.
  */
 function extractCustomerIds(account_sheet) {
   
