@@ -36,3 +36,5 @@ Account List script must run successfully at least once before running any other
 
 * Create a new Google Ads script in your Google Ads MCC
 * Copy the contents of the relevant script file in the newly generated Code.gs file
+* Where needed, replace `INSERT_SPREADSHEET_URL_HERE` with the link to your copy of the 
+exclusion list template
