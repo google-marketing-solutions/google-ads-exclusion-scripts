@@ -5,6 +5,14 @@ const TEMPLATE = {
   'url': 'https://docs.google.com/spreadsheets/d/158vvN73QkXIc_Xof0r591autQ1pFlYPBV-pyGV1nnyc/'
 }
 
+/**
+ * List of email recipients for the URL of the new sheet
+ */
+const EMAIL_RECIPIENTS = [
+  // Add email ids here, e.g.
+  // 'test1@test.com', 'test2@test.com'
+]
+
 /** 
  * main function to run when the script executes
  */
@@ -21,8 +29,11 @@ function main() {
     
     account.account_ids.push([managedAccount.getCustomerId()]);    
   }
-    
-  writeToTrix(account);
+  if(!AdsApp.getExecutionInfo().isPreview()) {  
+    writeToTrix(account);
+  } else {
+    console.log('Cannot write to file in Preview mode')
+  }
 }
 
 /**
@@ -38,10 +49,7 @@ function writeToTrix(account) {
   let numOfAccounts = account.account_ids.length;
   
   accountsSheet.getRange('A2').setValue(account.mcc_id);
-  accountsSheet.getRange(2,2, numOfAccounts).setValues(account.account_ids);
-  accountsSheet.getRange('D2').setValue(0);  
-  accountsSheet.getRange('E2').setValue(0);  
-  accountsSheet.getRange('F2').setValue(0);  
+  accountsSheet.getRange(2,2, numOfAccounts).setValues(account.account_ids); 
  
   console.log('Updated Accounts list')
 }
@@ -59,8 +67,26 @@ function findOrCreateFileInDrive(name) {
     console.log('Fetched file with name', name, 'at ', existingSheet.getUrl());
     return SpreadsheetApp.open(existingSheet)
   } else {
-    let newSheet = SpreadsheetApp.openByUrl(TEMPLATE.url).copy(name);
-    console.log('Created new file with the name ', name, 'at ', newSheet.getUrl());
-    return newSheet
+      let newSheet = SpreadsheetApp.openByUrl(TEMPLATE.url).copy(name);
+      let url = newSheet.getUrl();
+
+      sendEmail(name, url);
+      console.log('Created new file with the name ', name, 'at ', url)
+      return newSheet
   }
+}
+
+/**
+ * Sends an email to the configured email ids 
+ * when the file is created the first time
+ * 
+ * @param {string} name Name of the created file
+ * @param {string} url URL of the created file
+ */
+function sendEmail(name, url) {
+  EMAIL_RECIPIENTS.foreach(recipient =>
+                           MailApp.sendEmail(recipient,
+                                             '[Google Ads Script] New file created', 
+                                             `The Accounts List file with the name ${name} was created at ${url}`)
+                          )    
 }
