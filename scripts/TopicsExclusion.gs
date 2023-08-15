@@ -1,4 +1,4 @@
-const spreadsheetUrl = 'INSERT_SPREADSHEET_URL_HERE';
+const spreadsheetUrl = 'INSERT_SPREADSHEET_URL_HERE'; // Replace here
 const sheetName = '3 - Topics exclusion';
 
 /**
