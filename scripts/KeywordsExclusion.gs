@@ -2,7 +2,7 @@
  * Configuration to be used for the Common Negative List Script for Google Ads
  * manager accounts.
  */
-const SPREADSHEET_URL = 'INSERT_SPREADSHEET_URL_HERE';
+const SPREADSHEET_URL = 'INSERT_SPREADSHEET_URL_HERE'; //Replace here
 
 /**
  * Keep track of the spreadsheet names for various criteria types, as well as
