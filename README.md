@@ -32,9 +32,6 @@ The placements (website, YT channel and YT video) will be read from an MCC-level
 *Note:*
 
 * Account List script must run successfully at least once before running any other scripts
-* If you are using the XLSX version of the Exclusion template file, make sure to add the Apps Script file:
-  * On the Google Sheets file, go to *Extensions* > *Apps Script*
-  * Copy the entire contents of the `PopulateTopicIds.gs` file
 
 ## How to use:
 
