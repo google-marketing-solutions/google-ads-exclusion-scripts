@@ -2,7 +2,7 @@
  * URL of the accounts list template sheet
  */
 const TEMPLATE = {
-  'url': 'https://docs.google.com/spreadsheets/d/158vvN73QkXIc_Xof0r591autQ1pFlYPBV-pyGV1nnyc/'
+  'url': 'https://docs.google.com/spreadsheets/d/1lD9RAFPEjmKhvwkdXkPRfgbIU-I3mcW8Az8IpDMR_w4/'
 }
 
 /**
