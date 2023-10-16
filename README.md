@@ -6,7 +6,7 @@ There are three scripts, one each for keywords, topics and placements
 ## Prerequisite
 
 * Edit access to the Google Ads MCC
-* Copy of the [Exclusions Template](https://docs.google.com/spreadsheets/d/1cnlZSCh20nfc_rT8lMOR6eE4gAv-YsC0KnZzGBC2QZk/copy) > Please request access by joining this [Google Group](https://groups.google.com/g/vnexclusionlist-external)
+* Copy of the [Exclusions Template](https://docs.google.com/spreadsheets/d/1cnlZSCh20nfc_rT8lMOR6eE4gAv-YsC0KnZzGBC2QZk/copy)
 * For Placements Script, necessary exclusions must be added to an MCC level Placement Exclusion list
 
 
